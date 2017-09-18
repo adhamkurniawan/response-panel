@@ -1,0 +1,613 @@
+$white: #fff
+$grey: #adadad
+$light_grey: #eee
+$dark: #000
+$blue: #0070b7
+$light_green_blue: #d2dbdf
+
+.cust-check-head
+  margin-top: 10px
+
+.cust-check:not(:checked),
+.cust-check:checked
+  display: none
+
+.cust-check:not(:checked) + .label-check,
+.cust-check:checked + .label-check
+  position: relative
+  padding-top: 0
+  padding-left: 1.95em
+  cursor: pointer
+
+.cust-check:not(:checked) + .label-check:before,
+.cust-check:checked + .label-check:before
+  content: ''
+  position: absolute
+  left: 0
+  top: 0
+  width: 1.4em
+  height: 1.4em
+  border: 1px solid $light_grey
+  background: $white
+  border-radius: 4px
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.1)
+
+.cust-check:not(:checked) + .label-check:after,
+.cust-check:checked + .label-check:after
+  content: '\2713'
+  position: absolute
+  top: .2em
+  left: .1em
+  font-size: 1.25em
+  line-height: 0.8
+  color: $blue
+  transition: all .2s
+
+.cust-check:not(:checked) + .label-check:after
+  opacity: 0
+  transform: scale(0)
+
+.cust-check:checked + .label-check:after
+  opacity: 1
+  transform: scale(1)
+
+.cust-check:disabled:not(:checked) + .label-check:before,
+.cust-check:disabled:checked + .label-check:before
+  box-shadow: none
+  border-color: #bbb
+  background-color: $grey
+
+.cust-check:disabled:checked + .label-check:after
+  color: #999
+
+.cust-check:disabled + .label-check
+  color: #aaa
+
+.cust-check:checked:focus + .label-check:before,
+.cust-check:not(:checked):focus + .label-check:before
+  border: 1px solid #bbb
+
+.label-check:hover:before
+  border: 1px solid #999!important
+
+.box
+  width: 100%
+  position: relative
+  border: 1px solid $light_grey
+  background: $white
+  padding: 20px 0
+  height: auto
+  border-radius: 3px
+  .box-header
+    padding: 0 20px
+    margin-bottom: 10px
+    .avatar
+      margin-top: -24px
+      margin-left: 50px
+      .front-avatar, .back-avatar
+        img
+          width: 50px
+          height: 50px
+      .front-avatar
+        position: relative
+        z-index: 2
+      .back-avatar
+        position: relative
+        margin-top: -50px
+        margin-left: 40px
+        z-index: 1
+      .avatar-name
+        position: relative
+        margin-top: -50px
+        margin-left: 100px
+        z-index: 12
+        .name
+          margin-top: 3px
+          font-size: 16px
+          line-height: normal
+          a
+            text-decoration: none
+            color: $blue
+            font-weight: 700
+        .status
+          font-size: 14px
+          font-weight: 600
+          line-height: 0
+          color: $light_green_blue
+          i
+            margin-right: 8px
+          .small-icon8
+            vertical-align: middle
+            font-size: 6px
+            margin-left: 8px
+    .trigger
+      position: absolute
+      top: 20px
+      right: -540px
+      a
+        text-decoration: none
+        font-size: 18px
+        color: $grey
+  .box-body
+    padding: 0 20px
+    margin-top: 10px
+    .box-title
+      font-size: 16px
+      font-weight: 700
+    .box-text
+      font-size: 14px
+      font-weight: 400
+      letter-spacing: 1px
+      color: $grey
+    .status
+      position: relative
+      margin-top: 8px
+      ul
+        margin: 0
+        padding: 0
+        list-style: none
+        li
+          display: inline
+          margin-right: 7px
+          color: $grey
+          font-size: 15px
+    .table-social
+      margin-left: 0
+      margin-bottom: 30px
+      padding: 0
+      tr
+        position: relative
+        td
+          padding-right: 8px
+          padding-bottom: 10px
+          font-size: 17px
+        .face-icon
+          padding-right: 10px
+          i
+            color: green
+            font-weight: 700
+          .meh
+            color: $grey
+          .frown
+            color: red
+        .name
+          padding-right: 20px
+          color: $dark
+        .colon
+          color: $grey
+  .box-footer
+    width: 100%
+    padding: 5px 20px 5px 20px
+    background: $light_grey
+    position: absolute
+    bottom: 0
+    overflow: hidden
+    .link
+      display: inline
+      margin-right: 25px
+      .border
+        padding-top: 5px
+        padding-left: 9px
+        padding-right: 9px
+        border-left: 2px solid $light_green_blue
+        border-right: 2px solid $light_green_blue
+      .last-border
+        padding-top: 5px
+        padding-left: 9px
+        border-left: 2px solid $light_green_blue
+        border-right: 2px solid $light_green_blue
+      a
+        // code here
+        i
+          font-size: 23px
+          font-weight: 400
+          color: $grey
+
+.right-link
+  margin-left: 822px
+
+.tag
+  text-align: center
+  margin-right: 8px
+  padding: .3em .8em
+  border-radius: 20px
+  background: $light_grey
+  color: $grey
+
+.add-tag
+  cursor: pointer
+  font-size: 22px
+  color: $light_grey
+  transition: .2s
+  &:hover
+    color: $grey
+    transition: .2s
+
+@media only screen and (max-width: 1024px)
+  .box
+    width: 100%
+    position: relative
+    padding: 10px 0
+    .box-header
+      padding: 0 15px
+      margin-bottom: 5px
+      .avatar
+        margin-top: -24px
+        margin-left: 30px
+        .avatar-name
+          margin-top: -47px
+          margin-left: 100px
+          z-index: 12
+          .name
+            margin-top: 3px
+            font-size: 14px
+            a
+              text-decoration: none
+              color: $blue
+              font-weight: 700
+          .status
+            font-size: 12px
+            i
+              margin-right: 2px
+            .small-icon
+              margin-left: 2px
+      .trigger
+        position: absolute
+        top: 22px
+        right: -450px
+        a
+          font-size: 14px
+    .box-body
+      padding: 0 15px
+      margin-top: 5px
+      .box-title
+        font-size: 15px
+        line-height: 1.4
+      .box-text
+        font-size: 12px
+        letter-spacing: normal
+      .status
+        position: relative
+        margin-top: 9px
+        ul
+          margin: 0
+          padding: 0
+          list-style: none
+          li
+            display: inline
+            margin-right: 7px
+            color: $grey
+            font-size: 12px
+      .table-social
+        margin-left: 0
+        padding: 0
+        tr
+          position: relative
+          td
+            padding-right: 5px
+            padding-bottom: 13px
+            font-size: 13px
+          .face-icon
+            padding-right: 5px
+          .name
+            padding-right: 15px
+    .box-footer
+      padding: 2.5px 15px 2.5px 15px
+      .link
+        margin-right: 15px
+        .border
+          padding-top: 1px
+        .last-border
+          padding-top: 1px
+        a
+          // code here
+          i
+            font-size: 15px
+
+  .right-link
+    margin-left: 498px
+
+  .tag
+    font-size: 11px
+    margin-right: 3px
+    border-radius: 30px
+    padding: 4px 8px
+
+  .add-tag
+    font-size: 15px
+
+@media only screen and (max-width: 768px)
+  .box
+    width: 100%
+    position: relative
+    padding: 10px 0
+    .box-header
+      padding: 0 10px
+      margin-bottom: 5px
+      .avatar
+        margin-top: -24px
+        margin-left: 25px
+        .avatar-name
+          margin-top: -47px
+          margin-left: 93px
+          z-index: 12
+          .name
+            margin-top: 3px
+            font-size: 12px
+            a
+              text-decoration: none
+              color: $blue
+              font-weight: 700
+          .status
+            font-size: 10px
+            i
+              margin-right: 2px
+            .small-icon
+              margin-left: 2px
+      .trigger
+        position: absolute
+        top: 22px
+        right: 18px
+        a
+          font-size: 14px
+    .box-body
+      padding: 0 10px
+      margin-top: 5px
+      .box-title
+        font-size: 13px
+        line-height: 1.4
+      .box-text
+        font-size: 10px
+        letter-spacing: normal
+      .status
+        position: relative
+        margin-top: 9px
+        ul
+          margin: 0
+          padding: 0
+          list-style: none
+          li
+            display: inline
+            margin-right: 12px
+            color: $grey
+            font-size: 12px
+      .table-social
+        margin-left: 0
+        padding: 0
+        tr
+          position: relative
+          td
+            padding-right: 5px
+            padding-bottom: 13px
+            font-size: 10px
+          .face-icon
+            padding-right: 5px
+          .name
+            padding-right: 15px
+    .box-footer
+      padding: 2.5px 10px 2.5px 10px
+      .link
+        margin-right: 15px
+        .border
+          padding-top: 1px
+          padding-left: 9px
+          padding-right: 9px
+        .last-border
+          padding-top: 1px
+          padding-left: 9px
+        a
+          // code here
+          i
+            font-size: 15px
+
+  .right-link
+    margin-left: 172px
+
+  .tag
+    font-size: 9px
+    margin-right: 3px
+    padding: 3px 4px
+
+  .add-tag
+    font-size: 15px
+
+@media only screen and (max-width: 375px)
+  .box
+    width: 100%
+    position: relative
+    padding: 10px 0
+    .box-header
+      padding: 0 10px
+      margin-bottom: 5px
+      .avatar
+        margin-top: -24px
+        margin-left: 25px
+        .avatar-name
+          margin-top: -47px
+          margin-left: 93px
+          z-index: 12
+          .name
+            margin-top: 3px
+            font-size: 12px
+            a
+              text-decoration: none
+              color: $blue
+              font-weight: 700
+          .status
+            font-size: 10px
+            i
+              margin-right: 2px
+            .small-icon
+              margin-left: 2px
+      .trigger
+        position: absolute
+        top: 22px
+        right: 18px
+        a
+          font-size: 14px
+    .box-body
+      padding: 0 10px
+      margin-top: 5px
+      .box-title
+        font-size: 13px
+        line-height: 1.4
+      .box-text
+        font-size: 10px
+        letter-spacing: normal
+      .status
+        position: relative
+        margin-top: 9px
+        ul
+          margin: 0
+          padding: 0
+          list-style: none
+          li
+            display: inline
+            margin-right: 12px
+            color: $grey
+            font-size: 12px
+      .table-social
+        margin-left: 0
+        padding: 0
+        tr
+          position: relative
+          td
+            padding-right: 5px
+            padding-bottom: 13px
+            font-size: 10px
+          .face-icon
+            padding-right: 5px
+          .name
+            padding-right: 15px
+    .box-footer
+      padding: 2.5px 10px 2.5px 10px
+      .link
+        margin-right: 15px
+        .border
+          padding-top: 1px
+          padding-left: 9px
+          padding-right: 9px
+        .last-border
+          padding-top: 1px
+          padding-left: 9px
+        a
+          // code here
+          i
+            font-size: 15px
+
+  .right-link
+    margin-left: 133px
+
+  .tag
+    font-size: 9px
+    margin-right: 3px
+    padding: 3px 4px
+
+  .add-tag
+    font-size: 15px
+
+@media only screen and (max-width: 375px)
+  .box
+    width: 100%
+    position: relative
+    padding: 10px 0
+    .box-header
+      padding: 0 10px
+      margin-bottom: 5px
+      .avatar
+        margin-top: -24px
+        margin-left: 25px
+        .front-avatar, .back-avatar
+          img
+            width: 40px
+            height: 40px
+        .front-avatar
+          position: relative
+          z-index: 2
+        .back-avatar
+          position: relative
+          margin-top: -40px
+          margin-left: 30px
+          z-index: 1
+        .avatar-name
+          margin-top: -40px
+          margin-left: 75px
+          z-index: 12
+          .name
+            margin-top: 3px
+            font-size: 11px
+            a
+              text-decoration: none
+              font-weight: 700
+          .status
+            font-size: 9px
+            i
+              margin-right: 2px
+            .small-icon
+              margin-left: 2px
+      .trigger
+        position: absolute
+        top: 16px
+        right: 18px
+        a
+          font-size: 14px
+    .box-body
+      padding: 0 10px
+      margin-top: 5px
+      .box-title
+        font-size: 11px
+        line-height: 1.4
+      .box-text
+        font-size: 10px
+        letter-spacing: normal
+      .status
+        position: relative
+        margin-top: 9px
+        ul
+          margin: 0
+          padding: 0
+          list-style: none
+          li
+            display: inline
+            margin-right: 5px
+            color: $grey
+            font-size: 11px
+      .table-social
+        margin-left: 0
+        padding: 0
+        tr
+          position: relative
+          td
+            padding-right: 5px
+            padding-bottom: 13px
+            font-size: 10px
+          .face-icon
+            padding-right: 5px
+          .name
+            padding-right: 15px
+    .box-footer
+      padding: 2.5px 10px 2.5px 10px
+      .link
+        margin-right: 15px
+        .border
+          padding-top: 1px
+          padding-left: 9px
+          padding-right: 9px
+        .last-border
+          padding-top: 1px
+          padding-left: 9px
+        a
+          // code here
+          i
+            font-size: 15px
+
+  .right-link
+    margin-left: 78px
+
+  .tag
+    font-size: 9px
+    margin-right: 3px
+    padding: 3px 4px
+
+  .add-tag
+    font-size: 15px
